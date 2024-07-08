@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramienta de Recopilación de Información de Dinosaurios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Herramienta de Recopilación de Información de Dinosaurios</h1>
+    
+    <form action="/" method="post">
+        <label for="dinosaurio">Selecciona un dinosaurio:</label>
+        <select name="dinosaurio" id="dinosaurio">
+            {% for dino in dinosaurios %}
+                <option value="{{ dino }}">{{ dino }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Obtener información y imagen">
+    </form>
+</body>
+</html>
